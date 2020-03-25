@@ -68,10 +68,10 @@
 
   <div class="content-wrap">
     <div class="content-block">
-      <app-shop-card></app-shop-card>
+      <app-shop-card [product]="getProduct()" (addToCart)="setProductInCart($event)"></app-shop-card>
     </div>
     <div class="terminal">
-      <pre></pre>
+      <pre>{{getProductInCart() | json}}</pre>
     </div>
   </div>
 </div>
