@@ -8,17 +8,18 @@ import { IProduct, product } from '../mocks/products';
 })
 export class AppComponent {
 
-  private _productInCart: IProduct|null = null;
+  private chosenProduct: IProduct|null = null;
+  private product: IProduct|null = product;
 
-  public getProduct(): IProduct {
-    return product;
+  public getProduct(): IProduct|null {
+    return this.product;
   }
 
-  public getProductInCart(): IProduct|undefined {
-    return this._productInCart || undefined;
+  public getChosenProduct(): IProduct|undefined {
+    return this.chosenProduct || undefined;
   }
 
-  public setProductInCart(p: IProduct) {
-    this._productInCart = p;
+  public addProduct(p: IProduct) {
+    this.chosenProduct = p;
   }
 }
